@@ -1,0 +1,1465 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joon Choi | Automation Portfolio</title>
+    <meta
+      name="description"
+      content="마케팅 운영 자동화, 중앙 런처 기반 제품군 운영, AI 활용 원고 생성과 내부 툴 개발 경험을 담은 HTML 포트폴리오"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </head>
+  <body>
+    <!-- INTRO OVERLAY -->
+    <div id="intro-screen">
+      <div class="intro-content">
+        <div class="intro-progress-container">
+          <div class="intro-progress-bar" id="intro-progress-bar"></div>
+        </div>
+        <div class="intro-percent" id="intro-percent">0%</div>
+        <div class="intro-text-row">
+          <span id="intro-typing-text"></span><span class="intro-cursor">_</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ambient-layer" aria-hidden="true">
+      <div class="ambient-grid"></div>
+      <div class="ambient-noise"></div>
+      <div class="orb orb-main"></div>
+      <div class="orb orb-secondary"></div>
+      <div class="orb-ring"></div>
+      <div class="orb-beam"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="header-meta">
+        <span class="status-pill">
+          <em>Current</em>
+          <strong id="current-section-label">Intro</strong>
+        </span>
+        <a class="header-link" href="#contact">Contact</a>
+        <button id="theme-toggle" class="header-link theme-toggle-btn" aria-label="Toggle Theme" aria-pressed="false" type="button">
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb"></span>
+            <span class="theme-toggle-option theme-toggle-option-dark">&#9790;</span>
+            <span class="theme-toggle-option theme-toggle-option-light">&#9728;</span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="section-rail" id="section-rail" aria-label="Section navigation"></nav>
+    <div class="visual-stage-shell" id="visual-stage-shell" aria-hidden="true">
+      <canvas id="visual-stage-canvas" class="visual-stage-canvas"></canvas>
+      <div class="visual-stage-cloud" id="visual-stage-cloud">
+        <div class="visual-stage-core" id="visual-stage-core">
+          <img src="./assets/python-logo.svg" alt="">
+          <span>Python</span>
+        </div>
+      </div>
+      <div class="visual-stage-meta">
+        <span class="visual-stage-kicker">Visual Object</span>
+        <strong id="visual-stage-title">Python Automation</strong>
+      </div>
+    </div>
+
+    <main class="scroll-shell">
+      <section
+        class="snap-section hero-section"
+        id="hero"
+        data-label="Intro"
+        data-watermark="AUTOMATION"
+        data-accent-rgb="231 124 71"
+        data-accent-alt-rgb="103 201 255"
+      >
+        <div class="section-layout">
+          <div class="section-media hero-media">
+            <div class="hero-terminal-ui">
+              <div class="term-window">
+                <div class="term-header">
+                  <div class="term-dots"><i></i><i></i><i></i></div>
+                  <div class="term-title">system_deploy.sh</div>
+                </div>
+                <div class="term-body">
+                  <p><span class="prompt">root@system:~$</span> <span class="cmd">build --portfolio</span></p>
+                  <p class="out fade-in-1">Initializing 24+ automation systems...</p>
+                  <p class="out fade-in-2"><span class="success">✔</span> 13 Launcher Programs Connected</p>
+                  <p class="out fade-in-3"><span class="success">✔</span> AI Content Generation Pipeline Active</p>
+                  <p class="out fade-in-4"><span class="success">✔</span> wp-cms Database Sync Complete</p>
+                  <p class="fade-in-5"><span class="prompt">root@system:~$</span> <span class="cmd type-text">Starting visual engine...</span><span class="cursor">_</span></p>
+                </div>
+              </div>
+              
+              <div class="hero-stats-grid">
+                <div class="stat-card">
+                  <strong class="stat-num">24<small>+</small></strong>
+                  <span class="stat-lbl">Built Projects</span>
+                </div>
+                <div class="stat-card">
+                  <strong class="stat-num">13</strong>
+                  <span class="stat-lbl">Launcher Tools</span>
+                </div>
+                <div class="stat-card">
+                  <strong class="stat-num">✨</strong>
+                  <span class="stat-lbl">LLM Pipeline</span>
+                </div>
+              </div>
+              
+              <div class="hero-stack-row">
+                <span>Python</span><span>PySide6</span><span>Selenium</span><span>Playwright</span><span>OpenAI</span><span>Django</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Marketing Ops / Automation / AI</p>
+            <h1 class="section-title hero-title">
+              <span class="title-line">반복 업무를</span>
+              <span class="title-line">실행 가능한 <span class="gradient-text">자동화 시스템</span>으로</span>
+              <span class="title-line">전환합니다</span>
+            </h1>
+            <p class="section-summary hero-summary-copy">
+              <span class="summary-line">단순 스크립트가 아니라 중앙 런처, GUI, 배포 구조, 결과 기록 체계까지 설계했습니다.</span>
+              <span class="summary-line">비개발자도 바로 사용할 수 있는 실무형 자동화 포트폴리오입니다.</span>
+            </p>
+
+            <div class="action-row" style="margin-top: 32px;">
+              <a class="slanted-button button-dark" href="#launcher">대표 프로젝트 보기</a>
+              <a class="slanted-button button-light" href="#notes">아키텍처 스택 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      </section>
+
+      <section
+        class="snap-section"
+        id="experience"
+        data-label="Experience"
+        data-watermark="RESUME"
+        data-accent-rgb="255 184 108"
+        data-accent-alt-rgb="255 125 156"
+        data-visual-key="profile"
+        data-visual-title="Chang Joon CHOI"
+      >
+        <div class="section-layout">
+          <!-- Empty div to occupy the left grid column for the 3D Face -->
+          <div class="section-media" style="opacity: 0; pointer-events: none;"></div>
+
+          <div class="section-content timeline-content" style="max-width: 680px; width: 100%;">
+            <p class="section-kicker">Profile & Experience</p>
+            <h2 class="section-title" style="margin-bottom: 40px;">비즈니스 문제를 해결한<br>실무 경험들</h2>
+            
+            <!-- Profile Header -->
+            <div class="profile-header-clean">
+              <div class="ph-name">
+                <h3>최창준</h3>
+                <span>Chang Joon CHOI</span>
+              </div>
+              <p class="ph-email">ckdwns157002@gmail.com</p>
+            </div>
+            
+            <div class="premium-timeline">
+              <!-- Row 1: Right direction -->
+              <div class="pt-row right-flow">
+                <div class="pt-track"></div>
+                <div class="pt-curve rt-curve"></div>
+                
+                <div class="pt-nodes">
+                  <div class="pt-node">
+                    <div class="pt-dot"></div>
+                    <div class="pt-card">
+                      <span class="pt-date">2025.09 - 현재 (7개월)</span>
+                      <h4>팀넥스트 <small>개발 사원</small></h4>
+                      <ul>
+                        <li><strong>마케팅 자동화:</strong> Claude, GPT 연동 지능형 프로그램 및 SEO 칼럼 자동 생성 (반복 작업 50% 단축)</li>
+                        <li><strong>내부 툴:</strong> Python 기반 실무 GUI 자동 수집 툴 기획, 배포 및 관리 유지보수 주도</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="pt-node">
+                    <div class="pt-dot"></div>
+                    <div class="pt-card">
+                      <span class="pt-date">2024.12 - 2025.07 (8개월)</span>
+                      <h4>메가스터디뷰티아카데미 <small>경영지원</small></h4>
+                      <ul>
+                        <li><strong>데이터 리포팅:</strong> 내부 DB 대시보드 시각화 구축으로 보고서 작성 소요 50% 단축</li>
+                        <li><strong>재고 혁신:</strong> FIFO 기반 실시간 파악 구조 도입 (손실 방지), 팀원 피드백 매뉴얼 도입</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: Left direction -->
+              <div class="pt-row left-flow">
+                <div class="pt-track"></div>
+                
+                <div class="pt-nodes">
+                  <div class="pt-node">
+                    <div class="pt-dot"></div>
+                    <div class="pt-card">
+                      <span class="pt-date">2023.09 - 2023.12 (4개월)</span>
+                      <h4>우아한형제들 <small>로봇운영팀</small></h4>
+                      <ul>
+                        <li><strong>장애 대응:</strong> 돌발 로봇 장애 현장 진단 및 파악, 즉시 복구 시스템 유지</li>
+                        <li><strong>운영 프로세스:</strong> 재발 방지 리포팅 및 현장 프로세스 연계, 서비스 다운타임 최소화 달성</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="pt-node empty-node"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        </div>
+      </section>
+
+      <section
+        class="snap-section visual-driven"
+        id="positioning"
+        data-label="Overview"
+        data-watermark="OVERVIEW"
+        data-accent-rgb="90 184 255"
+        data-accent-alt-rgb="94 255 205"
+        data-visual-key="automation"
+        data-visual-title="Automation"
+      >
+        <div class="section-layout">
+          <div class="section-media framework-media">
+            <div class="framework-stack">
+              <article>
+                <span>01</span>
+                <strong>중앙 런처</strong>
+                <small>마케팅용 프로그램을 한곳에서 설치, 실행, 업데이트</small>
+              </article>
+              <article>
+                <span>02</span>
+                <strong>노출 / 추적 자동화</strong>
+                <small>URL 확인, 키워드 추적, 통합 영역 기록까지 처리</small>
+              </article>
+              <article>
+                <span>03</span>
+                <strong>AI 콘텐츠 생성</strong>
+                <small>원고 생성, 자동 작성, 품질 보정 흐름을 제품 기능으로 연결</small>
+              </article>
+              <article>
+                <span>04</span>
+                <strong>운영 프로세스 엔진</strong>
+                <small>시트 이동, 로그 적재, 판정 단계를 재현 가능한 흐름으로 정리</small>
+              </article>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">What I Built</p>
+            <h2 class="section-title">이 툴 조합으로 만든 것은 단순 스크립트가 아니라 실무용 운영 시스템입니다</h2>
+            <p class="section-summary">
+              내가 사용한 Python, Selenium, GPT, Claude, Gemini는 각각 개별 기술로 끝나지 않았습니다.
+              검색 결과를 확인하는 도구, 원고를 생성하는 프로그램, 여러 툴을 한곳에서 관리하는 런처,
+              그리고 운영 단계를 처리하는 프로세스 엔진으로 연결했습니다.
+            </p>
+            <ul class="detail-list">
+              <li>사내 마케팅 업무에 맞춘 자동화 프로그램을 직접 설계하고 구현</li>
+              <li>비개발자가 바로 쓸 수 있는 GUI와 결과 기록 구조를 함께 제공</li>
+              <li>AI를 기능 구현과 개발 가속 모두에 활용해 제작 속도와 결과 품질을 동시에 개선</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section project-section visual-driven"
+        id="launcher"
+        data-label="Launcher"
+        data-watermark="CONTROL"
+        data-accent-rgb="103 201 255"
+        data-accent-alt-rgb="231 124 71"
+        data-visual-key="launcher"
+        data-visual-title="Launcher"
+      >
+        <div class="section-layout">
+          <div class="section-media">
+            <div class="preview-frame">
+              <span class="preview-label">Central Launcher</span>
+              <img src="./assets/launcher-main.svg" alt="프로그램 모음 런처 화면">
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Featured Project 01</p>
+            <h2 class="section-title">프로그램 모음 런처</h2>
+            <p class="section-subtitle">마케팅에 필요한 여러 프로그램을 한곳에서 배포하고 실행하는 중앙 운영 허브</p>
+            <p class="section-summary">
+              개별 프로그램이 늘어날수록 설치와 업데이트, 버전 관리가 복잡해지기 때문에 런처를 따로 만들었습니다.
+              매니페스트와 릴리스 자산을 기준으로 설치, 업데이트, 실행 흐름을 묶어 제품군 전체를 중앙 관리하도록 설계했습니다.
+            </p>
+            <ul class="detail-list">
+              <li>중앙 매니페스트와 로컬 상태를 분리해 버전 및 설치 상태를 관리</li>
+              <li>GitHub Release 자산을 내려받아 설치와 업데이트를 자동화</li>
+              <li>여러 내부 툴을 따로 배포하지 않고 하나의 운영 체계처럼 다룰 수 있게 구성</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">PySide6</span>
+              <span class="tag">Manifest</span>
+              <span class="tag">GitHub Release</span>
+              <span class="tag">PyInstaller</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section project-section visual-driven"
+        id="url-checker"
+        data-label="URL Check"
+        data-watermark="VISIBILITY"
+        data-accent-rgb="255 156 92"
+        data-accent-alt-rgb="255 218 122"
+        data-visual-key="selenium"
+        data-visual-title="Selenium"
+      >
+        <div class="section-layout">
+          <div class="section-media">
+            <div class="preview-frame">
+              <span class="preview-label">Rank & Presence</span>
+              <img src="./assets/rank-checker-main.svg" alt="URL 노출확인프로그램 화면">
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Featured Project 02</p>
+            <h2 class="section-title">URL 노출확인프로그램</h2>
+            <p class="section-subtitle">특정 URL의 실제 노출 여부와 순위를 반복 확인하는 실무형 점검 도구</p>
+            <p class="section-summary">
+              일반 검색, 카페, 블로그 탭에서 원하는 URL이 실제로 노출되는지 수작업으로 확인하는 과정은 느리고 오류가 많았습니다.
+              이 프로그램은 키워드 목록을 기준으로 검색 결과를 반복 점검하고, 결과를 엑셀 형태로 정리해 운영에 바로 연결할 수 있게 만들었습니다.
+            </p>
+            <ul class="detail-list">
+              <li>Selenium 기반으로 동적 검색 결과의 실제 노출 여부와 순위를 확인</li>
+              <li>대량 키워드 처리와 결과 저장 흐름을 자동화해 반복 점검 시간을 줄임</li>
+              <li>운영자가 수작업으로 체크하던 프로세스를 재현 가능한 점검 도구로 전환</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">Selenium</span>
+              <span class="tag">Excel Export</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section project-section visual-driven"
+        id="manuscript"
+        data-label="Manuscript"
+        data-watermark="GENERATE"
+        data-accent-rgb="102 244 219"
+        data-accent-alt-rgb="106 164 255"
+        data-visual-key="gpt"
+        data-visual-title="AI"
+      >
+        <div class="section-layout">
+          <div class="section-media">
+            <div class="preview-frame">
+              <span class="preview-label">AI Content Ops</span>
+              <img src="./assets/manuscript-main.svg" alt="원고 생성프로그램 화면">
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Featured Project 03</p>
+            <h2 class="section-title">원고 생성프로그램</h2>
+            <p class="section-subtitle">AI 모델을 활용해 제목과 본문을 생산하고 보정하는 콘텐츠 생산 도구</p>
+            <p class="section-summary">
+              AI를 단순히 사용한 것이 아니라, 여러 모델을 비교하고 결과를 보정하는 흐름 자체를 도구로 묶었습니다.
+              제목과 본문을 일괄 생성하고, 재시도와 후처리까지 연결해 실제 운영에 쓸 수 있는 수준으로 정리한 프로젝트입니다.
+            </p>
+            <ul class="detail-list">
+              <li>OpenAI, Gemini, Anthropic 계열 모델을 목적에 맞게 조합해 사용</li>
+              <li>초안 생성 이후 품질 보정과 2차 변환 흐름을 설계해 결과물을 안정화</li>
+              <li>AI를 개발 생산성뿐 아니라 실제 제품 기능과 운영 출력물로 연결</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">OpenAI</span>
+              <span class="tag">Gemini</span>
+              <span class="tag">Anthropic</span>
+              <span class="tag">Desktop GUI</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section project-section visual-driven"
+        id="integrated-tracker"
+        data-label="Tracking"
+        data-watermark="TRACKING"
+        data-accent-rgb="146 255 154"
+        data-accent-alt-rgb="102 244 219"
+        data-visual-key="track"
+        data-visual-title="Tracking"
+      >
+        <div class="section-layout">
+          <div class="section-media">
+            <div class="preview-frame">
+              <span class="preview-label">Integrated Tracking</span>
+              <img src="./assets/integrated-rank-main.svg" alt="통합 카페 블로그 노출 확인 프로그램 화면">
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Featured Project 04</p>
+            <h2 class="section-title">통합 카페/블로그 네이버 키워드 노출 확인</h2>
+            <p class="section-subtitle">카페와 블로그 노출을 한 흐름에서 추적하고 기록하는 통합 추적 도구</p>
+            <p class="section-summary">
+              검색 결과가 고정되지 않는 환경에서는 단순 수집보다 반복 추적과 결과 기록이 중요합니다.
+              이 프로그램은 통합 검색과 블록 영역 기준으로 노출을 확인하고, 데이터를 시트와 연동해 운영 기록까지 이어지도록 구성했습니다.
+            </p>
+            <ul class="detail-list">
+              <li>Playwright 기반으로 동적 검색 결과와 블록 노출을 추적</li>
+              <li>Google Sheets와 Apps Script를 활용해 운영 데이터 저장과 후속 처리 연동</li>
+              <li>추적, 분류, 기록을 한 번에 이어지는 자동화 흐름으로 설계</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Playwright</span>
+              <span class="tag">Google Sheets</span>
+              <span class="tag">Apps Script</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section project-section visual-driven"
+        id="exposure"
+        data-label="Judgement"
+        data-watermark="JUDGEMENT"
+        data-accent-rgb="255 218 122"
+        data-accent-alt-rgb="255 156 92"
+        data-visual-key="ops"
+        data-visual-title="Ops"
+      >
+        <div class="section-layout">
+          <div class="section-media">
+            <div class="preview-frame abstract-frame">
+              <span class="preview-label">Workflow Engine</span>
+              <div class="workflow-stage">
+                <span>QUEUE</span>
+                <span>CHECK</span>
+                <span>MOVE</span>
+                <span>LOG</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Featured Project 05</p>
+            <h2 class="section-title">노출 미노출 프로그램</h2>
+            <p class="section-subtitle">노출 상태 판단과 시트 기반 단계 이동을 처리하는 운영 프로세스 엔진</p>
+            <p class="section-summary">
+              이 프로젝트의 핵심은 단순한 판정 기능이 아니라, 판정 이후 어떤 단계로 이동시키고 어떤 로그를 남길지까지 포함한 운영 흐름입니다.
+              dry-run과 실제 실행을 분리하고, 시트 이동과 기록 구조를 표준화해 재현 가능한 프로세스로 만들었습니다.
+            </p>
+            <ul class="detail-list">
+              <li>dry-run과 실제 실행을 분리해 운영 리스크를 낮춤</li>
+              <li>시트 이동과 로그 적재 방식을 표준화해 단계별 이력을 관리</li>
+              <li>기능 구현보다 운영 프로세스 구조화에 초점을 맞춘 자동화 설계</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Workflow</span>
+              <span class="tag">Google Sheets</span>
+              <span class="tag">Logging</span>
+              <span class="tag">Dry Run</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section"
+        id="notes"
+        data-label="Architecture"
+        data-watermark="SYSTEM"
+        data-accent-rgb="118 205 255"
+        data-accent-alt-rgb="255 169 98"
+      >
+        <div class="section-layout">
+          <div class="section-media arch-media">
+            <div class="arch-diagram">
+              <div class="arch-node">
+                <div class="node-icon">✨</div>
+                <div class="node-content">
+                  <span class="node-label">AI-Native Generation</span>
+                  <strong class="node-title">LLM 기반 원고 자동 작성 및 이미지 탐색</strong>
+                  <p class="node-detail">naver-image-searcher, Individual-manuscript-program</p>
+                </div>
+              </div>
+              
+              <div class="arch-link"></div>
+              
+              <div class="arch-node is-active">
+                <div class="node-icon">⚡</div>
+                <div class="node-content">
+                  <span class="node-label">Centralized Launcher</span>
+                  <strong class="node-title">13종 마케팅 툴 통합 중앙 제어 구조</strong>
+                  <p class="node-detail">naver-autocomplete-extractor ~ cafe-automation 탑재</p>
+                </div>
+              </div>
+              
+              <div class="arch-link"></div>
+              
+              <div class="arch-node">
+                <div class="node-icon">🌐</div>
+                <div class="node-content">
+                  <span class="node-label">Web Infrastructure</span>
+                  <strong class="node-title">워드프레스 자동 발행 및 SEO 백엔드 연동</strong>
+                  <p class="node-detail">wp-cms 개발 및 프레임워크 아키텍처 환경 구축</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Core Architecture</p>
+            <h2 class="section-title">24개의 프로젝트가<br>하나의 생태계로 연결됩니다</h2>
+            <p class="section-summary">
+              실무에서 진정으로 필요한 자동화는 파편화된 도구들을 수없이 찍어내는 것이 아닙니다. 
+              저는 <b>키워드 추출, 랭킹 확인, 카페 자동화 등 24개가 넘는 프로그램</b>을 기획하고 개발했으며, 
+              이 중 핵심적인 13개의 툴은 중앙 런처 시스템에 탑재하여 비개발자도 클릭 한 번으로 안전하게 
+              업데이트하고 실행할 수 있는 통합 생태계를 완성했습니다.
+            </p>
+            <ul class="detail-list">
+              <li><strong>AI-Driven Content:</strong> 단순 작업을 넘어 LLM을 활용한 콘텐츠 지능화 및 예외 처리 구현</li>
+              <li><strong>중앙 집중형 배포 구조:</strong> 개별 실행 파일의 파편화를 막기 위한 런처(GUI) 아키텍처 설계</li>
+              <li><strong>인프라 및 SEO 연계:</strong> 자동화가 실제 비즈니스 트래픽을 유도할 수 있도록 웹 시스템 아키텍처 최적화</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section"
+        id="tooling"
+        data-label="Stack"
+        data-watermark="TOOLSET"
+        data-accent-rgb="170 255 117"
+        data-accent-alt-rgb="102 244 219"
+      >
+        <div class="section-layout">
+          <div class="section-media stack-media">
+            <div class="stack-dashboard">
+              <div class="dashboard-header">
+                <span class="pulse-dot"></span>
+                <strong>SYSTEM STACK</strong>
+              </div>
+              <div class="dashboard-grid">
+                <div class="dash-card">
+                  <span>자동화 / GUI 제어</span>
+                  <strong>Python, PySide6, Selenium</strong>
+                </div>
+                <div class="dash-card">
+                  <span>데이터 / DB 연동</span>
+                  <strong>Google Sheets, pandas</strong>
+                </div>
+                <div class="dash-card">
+                  <span>웹 서비스 및 플랫폼</span>
+                  <strong>Django, Node.js, wp-cms</strong>
+                </div>
+                <div class="dash-card">
+                  <span>AI / 자동 생성 모듈</span>
+                  <strong>OpenAI, Gemini API</strong>
+                </div>
+              </div>
+              <div class="dashboard-footer">
+                <div class="footer-label">보조 기여 요약</div>
+                <p>단독 프로젝트 외에도 플랫폼의 SEO 트래픽 최적화 구조, 블로그 글 자동 발행 로직, 백엔드 라우팅 및 AI 이미지 모듈 세팅에 기여했습니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content">
+            <p class="section-kicker">Tech Stack</p>
+            <h2 class="section-title">목적에 맞춰 기술을<br>조합하고 구조화합니다</h2>
+            <p class="section-summary">
+              수십 개의 완성된 프로젝트들은 단일 언어나 프레임워크 안에 갇혀 있지 않습니다. 
+              브라우저 자동화에는 Selenium과 Playwright를, 데이터 적합성 검증에는 Google API를,
+              그리고 비개발자용 중앙 배포를 위해 데스크탑 앱 환경을 엮어 하나의 일관된 생태계를 만듭니다.
+            </p>
+            <ul class="detail-list">
+              <li><strong>UI/UX 배포:</strong> PySide6를 이용해 실무자가 코드 없이 클릭만으로 구동 가능한 데스크탑 앱 배포</li>
+              <li><strong>LLM 연동 및 활용:</strong> 복잡한 문맥 파악 및 원고 컨텍스트 퀄리티 상향을 위한 AI API 최적화 적용</li>
+              <li><strong>웹 플랫폼 확장성:</strong> Django를 활용한 백엔드 API 연동으로 마케팅 시스템과 웹 서버 간의 유기적 관리</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="snap-section contact-section"
+        id="contact"
+        data-label="Contact"
+        data-watermark="CONTACT"
+        data-accent-rgb="255 255 255"
+        data-accent-alt-rgb="170 255 117"
+      >
+        <div class="section-layout">
+          <!-- Left media panel completely removed per user request (이거 빼자) -->
+          
+          <div class="section-content" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; text-align: center;">
+            <p class="section-kicker">Let's Connect</p>
+            <h2 class="section-title" style="margin-left: auto; margin-right: auto;">새로운 기회와 협업을 기다립니다</h2>
+            <p class="section-summary" style="margin-left: auto; margin-right: auto; max-width: 600px;">
+              지금까지 보신 프로젝트에 대해 더 궁금한 점이 있으시거나, 협업 및 채용에 관한 제안이 있으시다면 언제든 연락 부탁드립니다.
+            </p>
+            <div class="contact-links" style="justify-content: center; margin-top: 40px;">
+              <a class="slanted-button button-dark" href="https://mail.google.com/mail/?view=cm&fs=1&to=ckdwns157002@gmail.com" target="_blank">이메일 보내기</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built for marketing automation, internal tools, and AI-connected operations.</p>
+      <p>© <span id="year"></span> Joon Choi</p>
+    </footer>
+
+    <!-- GSAP Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.153.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module">
+import * as THREE from 'three';
+import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
+import { MeshSurfaceSampler } from 'three/addons/math/MeshSurfaceSampler.js';
+import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const sections = [...document.querySelectorAll(".snap-section")];
+const rail = document.getElementById("section-rail");
+const currentSectionLabel = document.getElementById("current-section-label");
+const visualStageTitle = document.getElementById("visual-stage-title");
+const themeToggle = document.getElementById("theme-toggle");
+
+function updateThemeToggle() {
+  const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  themeToggle.dataset.themeMode = isLight ? "light" : "dark";
+  themeToggle.setAttribute("aria-pressed", String(isLight));
+  themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+}
+updateThemeToggle();
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  
+  if (newTheme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+  
+  localStorage.setItem("theme", newTheme);
+  updateThemeToggle();
+});
+
+let currentSectionIndex = -1;
+let pendingSectionIndex = -1;
+let sectionSyncFrame = null;
+let sectionSyncTimer = null;
+let sectionActivateFrame = null;
+let resizeSyncFrame = null;
+
+// DOM hydration scripts removed to preserve new HTML structures.
+
+// === 2. SVG Strings for 3D Conversion ===
+const SVGS = {
+  python: `<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.0164 2C10.8193 2 9.03825 3.72453 9.03825 5.85185V8.51852H15.9235V9.25926H5.97814C3.78107 9.25926 2 10.9838 2 13.1111L2 18.8889C2 21.0162 3.78107 22.7407 5.97814 22.7407H8.27322V19.4815C8.27322 17.3542 10.0543 15.6296 12.2514 15.6296H19.5956C21.4547 15.6296 22.9617 14.1704 22.9617 12.3704V5.85185C22.9617 3.72453 21.1807 2 18.9836 2H13.0164ZM12.0984 6.74074C12.8589 6.74074 13.4754 6.14378 13.4754 5.40741C13.4754 4.67103 12.8589 4.07407 12.0984 4.07407C11.3378 4.07407 10.7213 4.67103 10.7213 5.40741C10.7213 6.14378 11.3378 6.74074 12.0984 6.74074Z" fill="url(#paint0_linear_87_8204)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.9834 30C21.1805 30 22.9616 28.2755 22.9616 26.1482V23.4815L16.0763 23.4815L16.0763 22.7408L26.0217 22.7408C28.2188 22.7408 29.9998 21.0162 29.9998 18.8889V13.1111C29.9998 10.9838 28.2188 9.25928 26.0217 9.25928L23.7266 9.25928V12.5185C23.7266 14.6459 21.9455 16.3704 19.7485 16.3704L12.4042 16.3704C10.5451 16.3704 9.03809 17.8296 9.03809 19.6296L9.03809 26.1482C9.03809 28.2755 10.8192 30 13.0162 30H18.9834ZM19.9015 25.2593C19.1409 25.2593 18.5244 25.8562 18.5244 26.5926C18.5244 27.329 19.1409 27.9259 19.9015 27.9259C20.662 27.9259 21.2785 27.329 21.2785 26.5926C21.2785 25.8562 20.662 25.2593 19.9015 25.2593Z" fill="url(#paint1_linear_87_8204)"/>
+<defs>
+<linearGradient id="paint0_linear_87_8204" x1="12.4809" y1="2" x2="12.4809" y2="22.7407" gradientUnits="userSpaceOnUse">
+<stop stop-color="#327EBD"/>
+<stop offset="1" stop-color="#1565A7"/>
+</linearGradient>
+<linearGradient id="paint1_linear_87_8204" x1="19.519" y1="9.25928" x2="19.519" y2="30" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFDA4B"/>
+<stop offset="1" stop-color="#F9C600"/>
+</linearGradient>
+</defs>
+</svg>`,
+  selenium: `<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="-6.5 0 269 269" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+    <g>
+        <path d="M234.152874,0.00343857381 C234.808025,-0.0379575263 235.429647,0.297028821 235.755341,0.866994098 C236.081036,1.43695938 236.054047,2.14258032 235.685767,2.68600216 L235.685767,2.68600216 L169.388124,92.7434941 C168.902258,93.2919104 168.204691,93.6058549 167.472007,93.6058549 C166.739323,93.6058549 166.041756,93.2919104 165.55589,92.7434941 L165.55589,92.7434941 L142.179265,66.684305 C141.608302,66.0916135 140.79919,65.7901017 139.979599,65.86461 C139.160008,65.9391182 138.418531,66.3815927 137.963808,67.0675283 L137.963808,67.0675283 L123.784543,85.0790267 C123.335922,86.0932522 123.483294,87.2722249 124.167766,88.1448137 L124.167766,88.1448137 L166.322337,131.832278 C166.808203,132.380694 167.50577,132.694639 168.238454,132.694639 C168.971138,132.694639 169.668705,132.380694 170.154571,131.832278 L170.154571,131.832278 L252.930819,38.708999 C253.419531,38.1837537 254.176911,38.0053627 254.848672,38.2572733 C255.520434,38.5091839 255.973764,39.1415911 255.996606,39.8586691 L255.996606,39.8586691 L255.996606,266.343681 C256.028319,266.860939 255.83665,267.366955 255.470206,267.733398 C255.103763,268.099842 254.597747,268.291511 254.080489,268.259798 L254.080489,268.259798 L1.91951123,268.259798 C1.40225345,268.291511 0.896236952,268.099842 0.529793658,267.733398 C0.163350364,267.366955 -0.0283193115,266.860939 0.00339438157,266.343681 L0.00339438157,266.343681 L0.00339438157,1.91955542 C-0.0283193115,1.40229764 0.163350364,0.896281144 0.529793658,0.52983785 C0.896236952,0.163394556 1.40225345,-0.0282751193 1.91951123,0.00343857381 L1.91951123,0.00343857381 Z M169.004901,152.909563 C157.595908,152.708949 146.600443,157.179283 138.568082,165.284007 C130.535722,173.388731 126.164179,184.423846 126.467107,195.830581 C126.467107,222.272993 145.628275,239.134822 170.537794,239.134822 C182.068736,239.421769 193.375993,235.921903 202.728557,229.171014 C203.595534,228.383773 203.758299,227.081655 203.111781,226.105227 L203.111781,226.105227 L196.21376,215.758196 C195.438224,214.868953 194.118537,214.703992 193.147973,215.374973 C187.152367,219.469543 180.095799,221.73297 172.837134,221.88977 C159.424316,221.88977 150.993402,213.458856 149.460509,203.495048 C149.488325,203.083823 149.815731,202.756417 150.226955,202.728601 L150.226955,202.728601 L208.093684,202.728601 C209.327358,202.645153 210.309577,201.662935 210.393025,200.429261 L210.393025,200.429261 L210.393025,198.129921 C210.393025,171.304285 193.531196,152.909563 169.004901,152.909563 Z M111.904618,138.347075 C100.26487,128.832771 85.5368757,123.923439 70.5164945,124.551034 C44.4573053,124.551034 28.3619238,139.879969 28.3619238,158.27469 C28.3619238,200.046038 91.9770032,186.63322 91.9770032,206.177612 C91.9770032,212.309186 85.8454293,218.44076 72.8158347,218.44076 C60.4410031,218.54287 48.5018438,213.876992 39.4754015,205.411165 C38.9365113,204.907341 38.2064628,204.660494 37.4723971,204.733901 C36.7383313,204.807307 36.0716199,205.19383 35.6431678,205.794388 L35.6431678,205.794388 L25.6793602,219.59043 C25.0328421,220.566858 25.1956068,221.868976 26.0625835,222.656217 C36.4096145,232.236801 50.9721026,238.751598 71.2829412,238.751598 C101.174364,238.751598 115.736852,223.422663 116.503299,203.495048 C116.503299,162.106924 52.8882195,173.986849 52.8882195,156.358574 C52.8882195,149.843776 58.63657,145.245096 68.6003776,145.245096 C79.5839899,145.094583 90.2811092,148.750561 98.8750239,155.592127 C99.3802624,156.006036 100.031063,156.198722 100.680205,156.126595 C101.329346,156.054468 101.921977,155.723624 102.324034,155.208903 L102.324034,155.208903 L112.287842,141.796086 C112.701751,141.290847 112.894437,140.640046 112.82231,139.990905 C112.750183,139.341763 112.419339,138.749133 111.904618,138.347075 Z M169.388124,169.771392 C179.811439,169.188344 188.809537,176.998014 189.698963,187.399667 C189.671147,187.810891 189.34374,188.138297 188.932516,188.166113 L188.932516,188.166113 L149.843732,188.166113 C149.432507,188.138297 149.105101,187.810891 149.077285,187.399667 C150.358676,177.20234 159.111948,169.60516 169.388124,169.771392 Z" fill="#2CB134">
+</path>
+    </g>
+</svg>`,
+  gpt: `<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><title>OpenAI icon</title><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>`,
+  track: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Playwright--Streamline-Svg-Logos" height="24" width="24">
+  <desc>
+    Playwright Streamline Icon: https://streamlinehq.com
+  </desc>
+  <path fill="#2d4552" d="M7.99585 13.141725c-0.87725 0.248975 -1.452775 0.685475 -1.8319 1.12165 0.363125 -0.317775 0.849525 -0.609425 1.505675 -0.795425 0.6711 -0.1902 1.243625 -0.188825 1.7167 -0.09755v-0.369925c-0.40355 -0.0369 -0.866225 -0.0075 -1.390475 0.14125Zm-1.872 -3.109775 -3.25795 0.858325s0.059375 0.083875 0.1693 0.195775l2.76235 -0.727875s-0.03915 0.5044 -0.379075 0.9556c0.643 -0.486475 0.705375 -1.281825 0.705375 -1.281825Zm2.727125 7.65675C4.26615 18.923575 1.8404825 13.61025 1.1060875 10.852425c-0.3393 -1.273 -0.487415 -2.2371 -0.5268925 -2.859275 -0.0042425 -0.0646 -0.0022825 -0.11905 0.002285 -0.16895 -0.237835 0.01435 -0.3517015 0.137975 -0.328535 0.49525 0.0394775 0.621825 0.187595 1.585875 0.526895 2.859275C1.5139075 13.936125 3.9399 19.24945 8.52475 18.0146c0.99795 -0.26885 1.747675 -0.758525 2.310475 -1.383625 -0.51875 0.468525 -1.168 0.8375 -1.98425 1.057725Zm0.861575 -10.90855v0.3263h1.79835c-0.0369 -0.115525 -0.074075 -0.219625 -0.110975 -0.3263h-1.687375Z" stroke-width="0.25"></path>
+  <path fill="#2d4552" d="M11.9129 9.46735c0.80875 0.229675 1.2365 0.7967 1.462575 1.2985l0.90175 0.2561s-0.123 -1.756175 -1.711525 -2.2074c-1.486075 -0.422225 -2.400575 0.8257 -2.5118 0.9872 0.4323 -0.308 1.063575 -0.56015 1.859 -0.3344Zm7.178175 1.3066c-1.487425 -0.424125 -2.401575 0.8264 -2.511175 0.985625 0.432625 -0.307625 1.063575 -0.559875 1.85865 -0.3331 0.80745 0.23005 1.23485 0.796375 1.461625 1.298525l0.90305 0.25705s-0.125 -1.756525 -1.71215 -2.2081Zm-0.8959 4.6305 -7.501475 -2.097125s0.0812 0.411725 0.3928 0.94485l6.3159 1.765675c0.519975 -0.30085 0.792775 -0.6134 0.792775 -0.6134ZM12.994375 19.918475C7.054675 18.326 7.77275 10.758025 8.733875 7.171825c0.395725 -1.4779 0.802575 -2.576375 1.13995 -3.312725 -0.2013 -0.041425 -0.368025 0.0646 -0.532775 0.39965 -0.358225 0.726575 -0.8163 1.90955 -1.259625 3.5656 -0.96085 3.586125 -1.67895 11.15385 4.2605 12.746325 2.79955 0.75 4.980475 -0.3899 6.60625 -2.18005 -1.543175 1.3977 -3.513425 2.181325 -5.9538 1.52785Z" stroke-width="0.25"></path>
+  <path fill="#e2574c" d="M9.7126 15.915175V14.388l-4.243175 1.2032s0.313525 -1.82175 2.526475 -2.4495c0.6711 -0.1902 1.2437 -0.1889 1.7167 -0.09755V6.780125h2.124575c-0.231325 -0.714825 -0.4551 -1.26515 -0.64305 -1.64755 -0.310925 -0.632925 -0.62965 -0.21335 -1.35325 0.39185 -0.50965 0.425775 -1.797675 1.33405 -3.7359 1.85635 -1.938275 0.522625 -3.50525 0.384025 -4.15906 0.2708 -0.9268825 -0.1599 -1.4116925 -0.36345 -1.3663375 0.34155 0.03947 0.621825 0.187595 1.58595 0.5268925 2.859275C1.8405325 13.609875 4.266525 18.9232 8.85135 17.68835c1.197625 -0.3227 2.04295 -0.960525 2.6289 -1.7735h-1.76765v0.000325ZM2.865625 10.89025l3.258275 -0.858325s-0.094975 1.25345 -1.31645 1.57545c-1.2218 0.321675 -1.941825 -0.717125 -1.941825 -0.717125Z" stroke-width="0.25"></path>
+  <path fill="#2ead33" d="M21.975075 6.8525c-0.84695 0.148475 -2.878875 0.33345 -5.389975 -0.339625 -2.5118 -0.672675 -4.17835 -1.849175 -4.838625 -2.402175 -0.936 -0.783975 -1.347725 -1.328825 -1.752925 -0.5047 -0.358225 0.726875 -0.816325 1.909875 -1.259725 3.565925 -0.960775 3.586125 -1.67885 11.15385 4.260525 12.7463 5.938125 1.591125 9.09945 -5.322175 10.0603 -8.908625 0.4434 -1.655725 0.637825 -2.9095 0.691325 -3.717925 0.061 -0.915775 -0.568025 -0.64995 -1.7709 -0.439175ZM10.0418 9.81945s0.936 -1.45575 2.523525 -1.00455c1.588525 0.451225 1.711525 2.207425 1.711525 2.207425l-4.23505 -1.202875ZM13.917 16.352c-2.79235 -0.817975 -3.223 -3.04465 -3.223 -3.04465l7.501125 2.0972c0 -0.00035 -1.5141 1.755175 -4.278125 0.94745Zm2.6521 -4.57605s0.9347 -1.45475 2.521925 -1.00225c1.587175 0.4519 1.71215 2.2081 1.71215 2.2081l-4.234075 -1.20585Z" stroke-width="0.25"></path>
+  <path fill="#d65348" d="M8.2299 14.808525 5.4695 15.590875s0.29985 -1.708225 2.33335 -2.385175l-1.563075 -5.865975 -0.135075 0.04105c-1.93825 0.5227 -3.505225 0.384025 -4.15903 0.2708 -0.9268775 -0.159825 -1.411685 -0.36345 -1.3663375 0.341625 0.0394775 0.621825 0.187595 1.585875 0.5268925 2.85925 0.7340675 2.757425 3.160075 8.07075 7.744875 6.8359l0.135075 -0.042425 -0.756275 -2.8374ZM2.8657 10.8903l3.258275 -0.858375s-0.094975 1.25345 -1.316425 1.57545c-1.221825 0.321675 -1.94185 -0.717075 -1.94185 -0.717075Z" stroke-width="0.25"></path>
+  <path fill="#1d8d22" d="m14.04295 16.382625 -0.1263 -0.0307c-2.792325 -0.8179 -3.223 -3.044575 -3.223 -3.044575l3.86805 1.0812 2.047825 -7.86915 -0.024775 -0.006525c-2.5118 -0.672675 -4.17825 -1.849175 -4.838625 -2.402175 -0.936 -0.783975 -1.347725 -1.328825 -1.752925 -0.5047 -0.357875 0.726875 -0.815975 1.909875 -1.259375 3.565925 -0.960775 3.586125 -1.67885 11.15385 4.260525 12.74625l0.121725 0.027425 0.926875 -3.562975ZM10.0418 9.819475s0.936 -1.455775 2.523525 -1.004575c1.588525 0.451225 1.711525 2.207425 1.711525 2.207425l-4.23505 -1.20285Z" stroke-width="0.25"></path>
+  <path fill="#c04b41" d="m8.37055 14.7683 -0.740275 0.2101c0.174875 0.9859 0.483125 1.93205 0.966975 2.7679 0.0842 -0.0186 0.167725 -0.034575 0.2535 -0.058075 0.2248 -0.06065 0.43325 -0.13575 0.63395 -0.21765 -0.5406 -0.802225 -0.898225 -1.726175 -1.11415 -2.702275Zm-0.289075 -6.9439c-0.3804 1.419825 -0.720725 3.46345 -0.62705 5.51325 0.167675 -0.072775 0.3448 -0.140575 0.54155 -0.1964l0.13705 -0.030625c-0.167075 -2.189525 0.194075 -4.4207 0.600925 -5.93875 0.103125 -0.384025 0.206525 -0.741225 0.3096 -1.07435 -0.166025 0.105675 -0.3448 0.213975 -0.548425 0.32555 -0.137325 0.42385 -0.276 0.887125 -0.41365 1.401325Z" stroke-width="0.25"></path>
+</svg>`,
+  launcher: `<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.0164 2C10.8193 2 9.03825 3.72453 9.03825 5.85185V8.51852H15.9235V9.25926H5.97814C3.78107 9.25926 2 10.9838 2 13.1111L2 18.8889C2 21.0162 3.78107 22.7407 5.97814 22.7407H8.27322V19.4815C8.27322 17.3542 10.0543 15.6296 12.2514 15.6296H19.5956C21.4547 15.6296 22.9617 14.1704 22.9617 12.3704V5.85185C22.9617 3.72453 21.1807 2 18.9836 2H13.0164ZM12.0984 6.74074C12.8589 6.74074 13.4754 6.14378 13.4754 5.40741C13.4754 4.67103 12.8589 4.07407 12.0984 4.07407C11.3378 4.07407 10.7213 4.67103 10.7213 5.40741C10.7213 6.14378 11.3378 6.74074 12.0984 6.74074Z" fill="url(#paint0_linear_87_8204)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.9834 30C21.1805 30 22.9616 28.2755 22.9616 26.1482V23.4815L16.0763 23.4815L16.0763 22.7408L26.0217 22.7408C28.2188 22.7408 29.9998 21.0162 29.9998 18.8889V13.1111C29.9998 10.9838 28.2188 9.25928 26.0217 9.25928L23.7266 9.25928V12.5185C23.7266 14.6459 21.9455 16.3704 19.7485 16.3704L12.4042 16.3704C10.5451 16.3704 9.03809 17.8296 9.03809 19.6296L9.03809 26.1482C9.03809 28.2755 10.8192 30 13.0162 30H18.9834ZM19.9015 25.2593C19.1409 25.2593 18.5244 25.8562 18.5244 26.5926C18.5244 27.329 19.1409 27.9259 19.9015 27.9259C20.662 27.9259 21.2785 27.329 21.2785 26.5926C21.2785 25.8562 20.662 25.2593 19.9015 25.2593Z" fill="url(#paint1_linear_87_8204)"/>
+<defs>
+<linearGradient id="paint0_linear_87_8204" x1="12.4809" y1="2" x2="12.4809" y2="22.7407" gradientUnits="userSpaceOnUse">
+<stop stop-color="#327EBD"/>
+<stop offset="1" stop-color="#1565A7"/>
+</linearGradient>
+<linearGradient id="paint1_linear_87_8204" x1="19.519" y1="9.25928" x2="19.519" y2="30" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFDA4B"/>
+<stop offset="1" stop-color="#F9C600"/>
+</linearGradient>
+</defs>
+</svg>`,
+  ops: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <rect x="150" y="200" width="190" height="200" stroke="white" stroke-width="30"/>
+    <path d="M100,50 L300,50 L412,162 L412,462 A20,20 0 0,1 392,482 L100,482 A20,20 0 0,1 80,462 L80,70 A20,20 0 0,1 100,50 Z" stroke="white" stroke-width="30" fill="none"/>
+    <line x1="300" y1="50" x2="300" y2="162" stroke="white" stroke-width="30"/>
+    <line x1="300" y1="162" x2="412" y2="162" stroke="white" stroke-width="30"/>
+    <line x1="150" y1="266" x2="340" y2="266" stroke="white" stroke-width="30"/>
+    <line x1="150" y1="333" x2="340" y2="333" stroke="white" stroke-width="30"/>
+    <line x1="245" y1="200" x2="245" y2="400" stroke="white" stroke-width="30"/>
+  </svg>`,
+  automation: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <circle cx="256" cy="256" r="80" stroke="white" stroke-width="25" fill="none"/>
+    <rect x="50" y="50" width="120" height="80" rx="10" stroke="white" stroke-width="25" fill="none"/>
+    <rect x="342" y="50" width="120" height="80" rx="10" stroke="white" stroke-width="25" fill="none"/>
+    <rect x="50" y="382" width="120" height="80" rx="10" stroke="white" stroke-width="25" fill="none"/>
+    <rect x="342" y="382" width="120" height="80" rx="10" stroke="white" stroke-width="25" fill="none"/>
+    <line x1="170" y1="90" x2="256" y2="176" stroke="white" stroke-width="25"/>
+    <line x1="342" y1="90" x2="256" y2="176" stroke="white" stroke-width="25"/>
+    <line x1="170" y1="422" x2="256" y2="336" stroke="white" stroke-width="25"/>
+    <line x1="342" y1="422" x2="256" y2="336" stroke="white" stroke-width="25"/>
+  </svg>`,
+  profile: `<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1024.000000pt" height="1536.000000pt" viewBox="0 0 1024.000000 1536.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,1536.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M4520 13984 c-385 -29 -896 -157 -1170 -294 -134 -67 -290 -168 -410
+-265 -47 -38 -123 -100 -170 -138 -47 -38 -116 -87 -155 -109 -383 -224 -692
+-498 -867 -768 -154 -236 -226 -456 -234 -709 -4 -117 -6 -131 -45 -234 -86
+-228 -128 -414 -154 -686 -35 -367 -5 -717 87 -996 16 -49 62 -157 103 -240
+50 -104 78 -175 90 -230 20 -93 63 -201 105 -264 l29 -45 -48 -27 c-110 -63
+-177 -203 -202 -423 -23 -202 16 -415 117 -639 32 -72 89 -236 140 -402 134
+-437 190 -574 296 -717 90 -121 229 -212 385 -253 83 -22 89 -27 97 -70 9 -44
+94 -296 134 -397 49 -121 114 -255 172 -353 l53 -90 18 -230 c29 -372 42 -790
+37 -1189 l-6 -369 -38 -34 c-63 -54 -222 -157 -321 -206 -81 -41 -106 -48
+-225 -66 -170 -25 -316 -77 -437 -156 -20 -13 -130 -54 -246 -90 -353 -112
+-796 -272 -1280 -463 -145 -57 -150 -60 -150 -88 0 -45 34 -42 206 22 448 164
+1319 466 1327 460 1 -2 -7 -29 -19 -62 -45 -129 -36 -256 32 -427 32 -78 54
+-102 84 -91 22 9 16 49 -21 164 -22 70 -27 104 -28 190 -1 100 1 109 32 172
+52 107 152 182 317 241 39 13 87 27 108 31 l39 7 -30 -43 c-52 -77 -72 -147
+-72 -256 0 -129 24 -214 105 -377 297 -594 1006 -1128 1817 -1370 183 -55 439
+-108 638 -132 180 -21 638 -24 810 -4 810 91 1516 406 2029 906 350 341 541
+681 541 964 0 104 -18 171 -64 240 -39 58 -37 59 58 35 176 -45 328 -159 397
+-299 33 -67 34 -73 34 -190 0 -126 -14 -192 -71 -327 -36 -86 -28 -130 21
+-111 41 15 118 228 135 371 15 122 -8 257 -57 331 -15 23 -14 24 3 17 11 -4
+125 -44 254 -88 129 -44 395 -139 590 -210 608 -222 566 -208 585 -194 10 7
+15 22 13 35 -2 20 -27 33 -163 87 -302 122 -751 287 -1073 395 -270 90 -334
+115 -391 154 -130 86 -234 119 -428 134 -100 8 -120 13 -185 46 -69 36 -210
+128 -271 179 -27 22 -29 30 -43 157 -29 278 -36 503 -32 969 4 313 11 538 23
+690 l18 225 62 120 c77 146 163 364 201 503 l27 103 101 51 c237 118 381 269
+461 483 35 91 115 420 149 610 30 165 43 225 81 360 58 209 80 521 51 727 -25
+178 -57 258 -136 342 l-48 51 34 77 c19 42 41 105 50 140 9 35 29 79 46 100
+60 76 186 379 247 593 67 238 97 523 88 834 -14 484 -129 893 -339 1208 -26
+40 -48 75 -48 78 0 3 8 5 19 5 29 0 46 26 33 54 -13 30 -282 352 -414 497
+-380 415 -795 681 -1193 765 -108 22 -300 29 -410 15 -172 -23 -376 -108 -476
+-198 l-38 -34 -34 73 c-72 156 -225 318 -396 422 -159 96 -367 167 -586 201
+-99 16 -400 27 -505 19z m587 -118 c266 -56 479 -164 642 -325 125 -122 211
+-270 211 -361 0 -40 18 -60 55 -60 9 0 51 35 93 79 92 94 193 149 341 188 176
+45 418 42 605 -9 110 -29 374 -165 547 -280 170 -114 313 -235 422 -356 70
+-77 297 -344 337 -397 15 -19 14 -19 -12 -2 -64 39 -74 45 -100 51 -15 3 -29
+3 -31 -1 -3 -5 22 -40 55 -78 247 -286 338 -443 432 -747 77 -247 110 -483
+110 -798 0 -234 -12 -369 -50 -558 -34 -173 -128 -452 -193 -580 l-19 -36 -5
+29 c-3 17 -9 57 -12 89 -10 85 -20 108 -48 104 -22 -3 -22 -4 -23 -193 -1
+-214 -15 -293 -76 -408 l-33 -61 -62 -11 c-35 -7 -63 -10 -63 -9 0 2 7 33 16
+71 21 85 22 290 3 348 -14 41 -41 57 -62 36 -7 -7 -10 -58 -8 -143 3 -160 -10
+-233 -80 -438 -27 -80 -60 -194 -74 -254 -13 -59 -26 -110 -28 -112 -2 -2 -7
+87 -10 199 -18 558 -87 893 -235 1143 -39 65 -51 79 -72 79 -39 0 -36 -30 16
+-140 64 -137 119 -309 144 -445 46 -260 52 -374 57 -1010 2 -333 6 -615 8
+-626 6 -27 28 -36 49 -21 11 8 21 47 31 126 8 63 17 116 20 119 2 3 19 -26 37
+-64 28 -59 32 -80 33 -149 0 -89 -16 -135 -68 -187 -24 -24 -36 -29 -59 -24
+-52 10 -62 -12 -87 -200 -50 -370 -116 -718 -182 -960 -98 -359 -235 -636
+-487 -984 -236 -327 -586 -679 -897 -902 -248 -178 -540 -310 -810 -368 -125
+-27 -409 -38 -539 -21 -129 17 -312 66 -439 117 -469 188 -1006 626 -1404
+1144 -215 280 -392 646 -498 1030 -142 514 -267 1259 -282 1680 -8 241 20 720
+67 1123 11 93 20 170 20 171 0 2 41 27 90 56 109 64 253 206 248 243 -6 44
+-44 33 -115 -33 -87 -82 -134 -116 -217 -156 -97 -47 -199 -68 -301 -62 -102
+7 -161 32 -231 98 -55 52 -78 61 -88 35 -13 -36 37 -106 112 -154 75 -48 157
+-64 295 -59 64 3 117 5 117 4 0 -1 -7 -55 -15 -121 -8 -66 -19 -163 -25 -215
+-16 -138 -40 -499 -41 -615 l-1 -100 -14 50 c-8 28 -53 147 -99 265 -101 254
+-122 334 -132 495 -8 113 -9 120 -30 123 -35 5 -47 -58 -39 -210 l7 -127 -48
+14 c-104 31 -193 197 -234 437 -7 47 -29 103 -68 180 -125 247 -191 538 -190
+833 l0 120 32 -64 c52 -104 143 -183 160 -138 3 7 -17 45 -44 85 -133 198
+-153 475 -57 786 l22 71 8 -45 c29 -158 51 -210 90 -210 27 0 30 19 13 75 -37
+117 -30 332 17 485 22 72 117 280 128 280 4 0 10 -18 14 -41 7 -42 47 -94 69
+-86 13 4 13 27 2 128 -13 112 33 269 117 404 54 84 111 155 231 283 106 114
+149 174 134 189 -6 5 -106 -59 -162 -104 -171 -140 -313 -338 -373 -520 -24
+-73 -26 -76 -110 -221 -36 -62 -67 -110 -70 -108 -16 17 69 289 126 401 72
+144 207 319 355 462 167 160 377 312 641 463 165 95 496 249 731 340 33 13 66
+28 73 33 17 13 15 56 -3 63 -14 6 -206 -61 -349 -123 -43 -18 -80 -32 -82 -30
+-8 8 208 142 301 187 223 108 658 226 955 259 52 6 109 13 125 15 17 2 136 3
+265 1 206 -3 250 -7 357 -29z m3299 -4830 c76 -51 120 -168 137 -368 17 -214
+-19 -518 -84 -704 -11 -33 -27 -108 -35 -169 -28 -207 -108 -552 -165 -710
+-67 -186 -200 -330 -398 -429 l-54 -28 6 24 c38 157 115 627 132 806 l7 72 52
+35 c58 38 109 103 131 166 42 119 -8 338 -96 418 l-29 27 40 247 c74 459 122
+595 225 627 40 12 100 6 131 -14z m-6511 -125 c22 -10 50 -29 62 -43 27 -28
+152 -331 182 -438 48 -172 111 -447 111 -484 0 -46 36 -325 75 -580 31 -204
+85 -481 124 -633 l29 -113 -27 6 c-119 29 -259 119 -339 220 -102 129 -170
+287 -277 648 -85 289 -106 349 -160 456 -78 156 -104 262 -112 455 -6 160 3
+219 47 338 26 70 86 148 131 170 45 22 104 21 154 -2z m5473 -3472 c-17 -215
+-17 -1146 0 -1349 24 -279 56 -509 84 -600 20 -66 89 -115 104 -75 4 8 -1 45
+-9 83 -9 37 -19 82 -22 99 l-7 33 109 -76 c100 -71 132 -89 253 -140 58 -25
+106 -67 133 -118 19 -35 22 -57 22 -151 0 -95 -4 -122 -29 -195 -79 -231 -265
+-504 -493 -720 -513 -488 -1199 -788 -1978 -865 -209 -21 -611 -16 -805 10
+-408 54 -759 159 -1115 335 -310 154 -543 315 -767 529 -206 197 -349 382
+-449 578 -64 125 -89 207 -96 313 -12 176 40 258 215 341 121 59 228 121 325
+191 l68 49 -3 -133 -3 -133 32 -3 c23 -2 34 2 42 15 16 32 31 232 43 607 11
+367 2 843 -23 1203 -6 84 -9 159 -7 167 2 9 36 -25 85 -87 449 -557 1011 -985
+1520 -1156 313 -105 673 -120 981 -41 540 137 1086 531 1563 1128 55 68 129
+168 167 222 37 54 68 97 70 96 1 -2 -3 -72 -10 -157z"/>
+<path d="M6516 13305 c-86 -22 -176 -70 -241 -127 -48 -44 -56 -55 -53 -82 5
+-47 31 -44 90 9 108 97 237 138 418 133 l115 -3 0 25 c0 38 -43 53 -165 57
+-69 2 -125 -3 -164 -12z"/>
+<path d="M5567 12830 c-114 -20 -264 -84 -380 -162 -73 -50 -169 -132 -372
+-322 -488 -454 -775 -645 -1090 -726 -75 -19 -97 -38 -79 -67 39 -62 311 30
+578 195 197 122 406 296 776 646 256 243 399 326 608 354 159 22 276 -18 386
+-132 188 -194 243 -456 155 -745 -21 -70 -18 -96 11 -104 34 -9 58 21 87 106
+24 74 27 96 27 227 1 167 -17 246 -83 378 -139 276 -354 397 -624 352z"/>
+<path d="M5620 12297 c-86 -36 -167 -97 -266 -198 -107 -111 -180 -209 -376
+-500 -80 -119 -182 -265 -227 -325 -58 -77 -81 -116 -79 -134 3 -29 -93 -222
+-190 -384 -116 -194 -232 -330 -362 -422 -46 -32 -52 -35 -35 -13 143 184 204
+276 270 401 20 39 26 61 21 81 -8 35 -31 34 -52 0 -73 -120 -197 -295 -267
+-378 -157 -188 -281 -289 -454 -372 -62 -29 -115 -58 -118 -64 -4 -5 -1 -17 6
+-25 36 -43 219 34 390 164 39 29 79 52 93 52 43 0 199 87 278 154 89 76 155
+152 239 278 70 104 194 339 239 452 22 57 72 139 171 280 77 111 167 241 202
+291 232 335 378 494 516 563 92 46 149 54 201 27 64 -33 108 -188 96 -332 -6
+-80 -2 -99 25 -114 14 -7 23 -5 39 11 17 17 20 33 20 123 0 185 -44 312 -129
+372 -37 26 -53 30 -119 33 -62 2 -88 -2 -132 -21z"/>
+<path d="M6422 12029 c-70 -12 -92 -25 -92 -53 0 -33 21 -38 98 -25 133 23
+305 -13 435 -91 71 -43 93 -47 111 -18 8 14 5 23 -18 47 -37 38 -171 105 -255
+126 -79 20 -209 27 -279 14z"/>
+<path d="M5530 11971 c-104 -32 -202 -140 -450 -496 -46 -66 -122 -172 -169
+-235 -89 -121 -108 -157 -98 -184 10 -25 50 -19 79 12 31 34 169 220 278 377
+205 293 319 427 378 442 32 8 52 -5 77 -50 23 -42 49 -55 71 -36 31 26 -11
+130 -64 158 -28 14 -75 20 -102 12z"/>
+<path d="M6349 11810 c-23 -19 -23 -21 -7 -34 10 -7 49 -16 87 -19 201 -17
+399 -174 671 -532 293 -386 507 -585 719 -671 73 -30 115 -29 119 2 3 18 -11
+28 -81 62 -194 95 -384 276 -664 637 -246 317 -372 440 -538 523 -108 54 -261
+70 -306 32z"/>
+<path d="M7490 10655 c-21 -26 52 -206 148 -365 158 -262 437 -529 528 -506
+44 11 29 42 -49 99 -188 139 -409 420 -539 685 -50 102 -64 116 -88 87z"/>
+<path d="M3744 10562 c-7 -4 -46 -59 -89 -122 -42 -63 -102 -146 -132 -183
+-144 -175 -414 -312 -686 -347 -66 -8 -176 -1 -228 15 -8 3 -23 -1 -33 -8 -28
+-21 -6 -52 51 -71 175 -60 480 3 727 152 199 119 452 452 416 547 -11 28 -10
+28 -26 17z"/>
+<path d="M6473 9919 c-208 -20 -458 -90 -631 -178 -84 -43 -120 -93 -86 -122
+14 -11 21 -10 48 6 56 34 140 72 175 80 l34 7 -23 -32 c-35 -49 -16 -55 86
+-26 145 41 259 58 445 63 208 7 302 -8 411 -63 65 -33 98 -38 98 -15 0 19 -96
+151 -152 209 l-57 59 -114 11 c-62 7 -122 11 -133 11 -10 -1 -56 -5 -101 -10z"/>
+<path d="M6933 9923 c-32 -12 -11 -52 75 -139 48 -49 107 -118 131 -152 33
+-49 47 -63 64 -60 63 9 -1 124 -151 271 -88 86 -95 90 -119 80z"/>
+<path d="M3240 9855 c-9 -11 -16 -12 -30 -3 -19 12 -50 5 -50 -13 0 -6 9 -13
+20 -16 11 -3 20 -8 20 -12 0 -4 -27 -33 -61 -66 -97 -96 -201 -231 -197 -257
+7 -49 35 -29 146 99 61 70 133 150 161 178 52 50 61 71 39 93 -16 16 -33 15
+-48 -3z"/>
+<path d="M3492 9859 c-143 -18 -212 -62 -291 -183 -43 -66 -55 -126 -26 -126
+9 0 51 18 93 39 123 62 174 72 378 78 207 6 339 -6 493 -43 121 -30 138 -24
+90 30 -17 20 -29 39 -26 42 11 12 107 -28 162 -67 91 -66 120 -28 38 48 -98
+90 -287 160 -495 183 -111 12 -323 11 -416 -1z"/>
+<path d="M6230 9079 c-148 -29 -315 -144 -367 -254 -16 -33 -16 -39 -2 -63 11
+-20 23 -27 44 -27 28 0 30 3 36 43 3 28 15 53 35 73 35 37 128 102 131 92 1
+-5 7 -27 13 -51 14 -56 70 -116 125 -138 78 -29 186 -2 247 63 33 35 67 109
+68 146 0 33 14 34 103 11 83 -21 137 -50 137 -73 0 -10 -21 -37 -47 -60 -43
+-36 -45 -40 -24 -41 12 0 63 14 113 30 49 17 100 30 114 30 13 0 56 -16 95
+-36 78 -39 112 -41 117 -8 4 29 -29 51 -181 124 -149 71 -272 114 -391 135
+-95 16 -292 19 -366 4z"/>
+<path d="M3750 9073 c-166 -12 -333 -66 -545 -176 -141 -74 -160 -86 -163
+-110 -5 -42 19 -43 111 -3 97 42 112 43 209 16 40 -11 83 -20 95 -20 21 0 18
+5 -22 43 -25 24 -45 49 -45 55 0 25 107 71 198 87 42 7 42 7 42 -24 0 -38 39
+-118 72 -147 94 -87 237 -85 320 3 31 33 58 91 58 127 l0 25 38 -21 c54 -32
+150 -130 154 -159 2 -18 9 -24 27 -24 40 0 49 28 24 77 -49 101 -171 201 -280
+230 -59 16 -212 27 -293 21z"/>
+<path d="M4539 7822 c-197 -206 -253 -391 -171 -565 50 -107 153 -192 225
+-185 50 5 43 37 -14 64 -97 46 -169 168 -169 284 0 109 69 239 204 387 70 76
+84 113 42 113 -17 0 -50 -28 -117 -98z"/>
+<path d="M5617 7743 c-14 -13 -6 -34 47 -112 101 -152 124 -302 60 -393 -17
+-24 -56 -59 -89 -79 -62 -37 -72 -54 -44 -72 12 -7 30 -3 70 15 76 35 114 70
+145 135 63 127 21 317 -103 471 -32 39 -68 54 -86 35z"/>
+<path d="M5330 7458 c-50 -26 -113 -108 -108 -142 4 -31 43 -32 79 -1 30 24
+33 25 50 9 10 -9 21 -26 25 -38 11 -36 36 -56 68 -56 42 0 72 23 86 66 21 64
+-14 133 -84 165 -53 24 -63 24 -116 -3z"/>
+<path d="M4714 7451 c-95 -58 -99 -176 -7 -209 40 -13 68 1 98 48 34 53 48 58
+86 26 17 -15 37 -25 43 -23 37 12 -9 122 -67 158 -41 25 -112 25 -153 0z"/>
+<path d="M4795 6521 c-27 -10 -153 -70 -280 -134 -314 -158 -348 -167 -403
+-111 -13 13 -28 24 -35 24 -46 0 -90 -84 -64 -123 14 -22 15 -22 383 -25 203
+-1 430 -7 504 -14 91 -7 195 -8 320 -2 102 5 302 9 445 9 176 0 285 4 336 14
+43 7 96 10 120 7 97 -14 104 -13 107 17 4 36 -33 95 -64 103 -18 5 -32 0 -48
+-15 -29 -27 -97 -28 -171 -2 -30 11 -127 61 -215 111 -285 163 -370 183 -505
+119 -99 -47 -165 -46 -268 4 -86 42 -94 43 -162 18z m141 -93 c56 -31 65 -33
+159 -33 87 1 107 4 158 28 66 31 115 34 184 11 62 -20 216 -98 323 -164 l85
+-52 -190 7 c-137 4 -236 2 -356 -10 -135 -12 -190 -13 -290 -4 -68 6 -236 14
+-372 18 l-248 6 195 98 c163 83 254 122 287 126 3 1 32 -14 65 -31z"/>
+<path d="M4393 6013 c-27 -10 -13 -51 30 -88 110 -96 286 -170 473 -201 135
+-22 391 -15 519 14 152 35 306 98 400 162 38 26 46 36 43 58 -4 39 -26 38
+-104 -8 -259 -151 -607 -206 -903 -141 -153 34 -259 81 -373 168 -57 43 -63
+46 -85 36z"/>
+<path d="M8371 8793 c-46 -23 -153 -132 -181 -186 -44 -83 4 -107 66 -32 20
+25 40 45 44 45 26 0 61 -194 58 -310 l-3 -75 30 0 c25 0 31 5 36 30 20 94 1
+269 -42 379 l-21 51 26 20 c83 64 81 62 67 79 -17 20 -37 20 -80 -1z"/>
+<path d="M8187 7449 c-32 -38 -80 -84 -107 -102 -50 -32 -65 -51 -54 -68 23
+-38 138 33 225 138 46 56 54 103 17 103 -16 0 -41 -22 -81 -71z"/>
+<path d="M1697 8774 c-14 -14 -7 -43 15 -58 l22 -16 -27 -57 c-14 -32 -32 -78
+-38 -103 -26 -102 -2 -391 35 -428 15 -15 17 -15 32 0 15 15 15 26 4 115 -23
+180 -3 355 49 422 l18 24 34 -21 c19 -11 45 -32 58 -46 32 -34 71 -35 71 -2 0
+31 -87 111 -156 142 -58 27 -106 39 -117 28z"/>
+<path d="M2100 8090 c-12 -17 -35 -67 -52 -113 -26 -69 -31 -97 -32 -177 -1
+-82 3 -102 25 -150 45 -96 114 -160 173 -160 16 0 27 7 31 20 5 15 -8 34 -59
+82 -52 51 -67 73 -80 117 -29 99 -16 203 40 325 21 45 23 60 14 71 -19 23 -36
+18 -60 -15z"/>
+<path d="M1931 7406 c-18 -21 -1 -46 61 -92 113 -84 218 -141 238 -129 6 4 10
+17 10 30 0 19 -14 32 -70 65 -39 23 -100 63 -136 91 -69 52 -85 57 -103 35z"/>
+</g>
+</svg>`
+};
+
+// === 3. Three.js Particle Engine ===
+let scene, camera, renderer, morphPoints;
+let pointsMaterial, starsMat;
+const POINT_COUNT = 150000;
+const DESKTOP_MORPH_X = -1.6;
+const MORPH_SHAPE_SIZE = 1.52;
+const shapePositions = {};
+let currentShapeKey = 'python';
+
+const morphUniforms = { morphRatio: { value: 0.0 } };
+const blobParams = { time: 0, noiseAmount: 0.04, noiseScale: 1.5, rotationSpeed: 0.001 };
+
+function samplePointsFromSvg(svgString) {
+  const loader = new SVGLoader();
+  const svgData = loader.parse(svgString);
+  const geometries = [];
+
+  // Parse viewBox scale to normalize shape thickness proportionately
+  let baseSize = 512; 
+  const vbMatch = svgString.match(/viewBox=["']\s*[-\d.]+\s+[-\d.]+\s+([-\d.]+)\s+([-\d.]+)["']/);
+  if (vbMatch) {
+    const w = parseFloat(vbMatch[1]), h = parseFloat(vbMatch[2]);
+    baseSize = Math.max(w, h) || 512;
+  }
+
+  const depthScale = baseSize * 0.01; // 1% thickness
+  const bThickness = baseSize * 0.002;
+  const bSize = baseSize * 0.001;
+
+  for (const path of svgData.paths) {
+    const shapes = SVGLoader.createShapes(path);
+    for (const shape of shapes) {
+      const geometry = new THREE.ExtrudeGeometry(shape, {
+        depth: depthScale,
+        bevelEnabled: true,
+        bevelThickness: bThickness,
+        bevelSize: bSize,
+        bevelSegments: 3,
+        curveSegments: 16
+      });
+      geometries.push(geometry);
+    }
+  }
+
+  if (geometries.length === 0) return null;
+  const mergedGeom = BufferGeometryUtils.mergeGeometries(geometries, false);
+  mergedGeom.computeBoundingBox();
+  const center = new THREE.Vector3();
+  mergedGeom.boundingBox.getCenter(center);
+  mergedGeom.translate(-center.x, -center.y, -center.z);
+  
+  mergedGeom.computeBoundingSphere();
+  const radius = mergedGeom.boundingSphere.radius;
+  if (radius > 0) {
+    // 기존 2.4에서 1.5로 축소하여 전체 모양을 작고 예쁘게 조절 (1.4로 약간 확대)
+    const scale = MORPH_SHAPE_SIZE / radius; 
+    mergedGeom.scale(scale, -scale, scale); // Invert Y for correct SVG orientation
+  }
+
+  const sampler = new MeshSurfaceSampler(new THREE.Mesh(mergedGeom.toNonIndexed(), new THREE.MeshBasicMaterial())).build();
+  const positions = new Float32Array(POINT_COUNT * 3);
+  const tempPosition = new THREE.Vector3();
+  for (let i = 0; i < POINT_COUNT; i++) {
+    sampler.sample(tempPosition);
+    positions[i*3] = tempPosition.x;
+    positions[i*3+1] = tempPosition.y;
+    positions[i*3+2] = tempPosition.z;
+  }
+  return new THREE.BufferAttribute(positions, 3);
+}
+
+function initThree() {
+  const canvasContainer = document.getElementById("visual-stage-shell");
+  const canvas = document.getElementById("visual-stage-canvas");
+  const core = document.querySelector(".visual-stage-core");
+  if (core) core.style.display = "none"; // Hide old DOM fallback
+
+  scene = new THREE.Scene();
+  
+  const width = canvasContainer.clientWidth || window.innerWidth;
+  const height = canvasContainer.clientHeight || window.innerHeight;
+  const aspect = width / height;
+  camera = new THREE.PerspectiveCamera(60, aspect, 0.1, 100);
+  camera.position.set(0, 0, 4);
+
+  renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  // Prepare shapes
+  for (const key in SVGS) {
+    const attr = samplePointsFromSvg(SVGS[key]);
+    if (attr) shapePositions[key] = attr;
+  }
+  
+  // Sphere fallback
+  const baseSphere = new THREE.SphereGeometry(1, 64, 64);
+  const sphereSampler = new MeshSurfaceSampler(new THREE.Mesh(baseSphere.toNonIndexed(), new THREE.MeshBasicMaterial())).build();
+  const sphereAttr = new Float32Array(POINT_COUNT * 3);
+  const tPos = new THREE.Vector3();
+  for(let i=0; i<POINT_COUNT; i++) {
+    sphereSampler.sample(tPos);
+    sphereAttr[i*3] = tPos.x; sphereAttr[i*3+1] = tPos.y; sphereAttr[i*3+2] = tPos.z;
+  }
+  shapePositions['sphere'] = new THREE.BufferAttribute(sphereAttr, 3);
+
+  const morphGeometry = new THREE.BufferGeometry();
+  morphGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(POINT_COUNT * 3), 3));
+  morphGeometry.setAttribute('positionStart', shapePositions['python'] || shapePositions['sphere']);
+  morphGeometry.setAttribute('positionEnd', shapePositions['python'] || shapePositions['sphere']);
+
+  pointsMaterial = new THREE.PointsMaterial({
+    color: 0x54ffb4,
+    size: 0.008,
+    sizeAttenuation: true,
+    transparent: true,
+    opacity: 0.85,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending
+  });
+
+  pointsMaterial.onBeforeCompile = shader => {
+    shader.uniforms.morphRatio = morphUniforms.morphRatio;
+    shader.uniforms.time = blobParams;
+    shader.uniforms.noiseAmount = blobParams;
+    shader.uniforms.noiseScale = blobParams;
+
+    shader.vertexShader = `
+      uniform float morphRatio;
+      uniform float time;
+      uniform float noiseAmount;
+      uniform float noiseScale;
+      attribute vec3 positionStart;
+      attribute vec3 positionEnd;
+
+      float simple3DNoise_glsl(float x, float y, float z, float timeVal) {
+          float val = 0.0;
+          val += sin(x + timeVal * 1.0) * cos(y * 0.8 + timeVal * 0.5);
+          val += sin(y * 1.2 + timeVal * 1.1) * cos(z * 1.1 + timeVal * 0.6);
+          val += sin(z * 1.4 + timeVal * 1.2) * cos(x * 0.9 + timeVal * 0.7);
+          val += sin((x + y) * 0.7 + timeVal * 0.8) * cos((y + z) * 0.6 + timeVal * 0.4);
+          return val / 4.0;
+      }
+    ` + shader.vertexShader;
+    
+    shader.vertexShader = shader.vertexShader.replace(
+      '#include <begin_vertex>',
+      `
+      vec3 interpolatedPosition = mix(positionStart, positionEnd, morphRatio);
+      vec3 pN = interpolatedPosition;
+      float noise = simple3DNoise_glsl( pN.x * noiseScale, pN.y * noiseScale, pN.z * noiseScale, time );
+      vec3 normalForNoise = normalize(pN);
+      if (length(pN) < 0.0001) { normalForNoise = vec3(0.0, 1.0, 0.0); }
+      vec3 displacedPosition = pN + normalForNoise * noise * noiseAmount;
+      vec3 transformed = displacedPosition;
+      `
+    );
+  };
+
+  morphPoints = new THREE.Points(morphGeometry, pointsMaterial);
+  // 모바일이 아니면 텍스트 가독성을 위해 3D 요소를 좌측으로 더 확실히 배치
+  const isMobile = window.innerWidth < 768;
+  morphPoints.position.x = isMobile ? 0 : DESKTOP_MORPH_X;
+  scene.add(morphPoints);
+
+  // Background stars for depth
+  const starsGeo = new THREE.BufferGeometry();
+  const starsAttr = new Float32Array(500 * 3);
+  for(let i=0; i<1500; i++) {
+    starsAttr[i] = (Math.random() - 0.5) * 15;
+  }
+  starsGeo.setAttribute('position', new THREE.BufferAttribute(starsAttr, 3));
+  starsMat = new THREE.PointsMaterial({color: 0x37ffae, size: 0.015, transparent: true, opacity: 0.4});
+  scene.add(new THREE.Points(starsGeo, starsMat));
+
+  window.addEventListener("resize", () => {
+    const w = canvasContainer.clientWidth || window.innerWidth;
+    const h = canvasContainer.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+    
+    // 리사이즈 시 반응형 레이아웃 위치 조정
+    if(morphPoints) morphPoints.position.x = w < 768 ? 0 : DESKTOP_MORPH_X;
+  });
+}
+
+function triggerMorph(targetKey) {
+  if (!shapePositions[targetKey]) targetKey = 'sphere';
+  
+  morphPoints.geometry.setAttribute('positionStart', shapePositions[currentShapeKey] || shapePositions['sphere']);
+  morphPoints.geometry.setAttribute('positionEnd', shapePositions[targetKey]);
+
+  gsap.killTweensOf(morphUniforms.morphRatio);
+  gsap.to(morphUniforms.morphRatio, {
+    value: 1.0,
+    duration: 1.2,
+    ease: "power2.inOut",
+    onStart: () => { morphUniforms.morphRatio.value = 0.0; },
+    onComplete: () => {
+      currentShapeKey = targetKey;
+      morphPoints.geometry.setAttribute('positionStart', shapePositions[currentShapeKey]);
+      morphUniforms.morphRatio.value = 0.0;
+    }
+  });
+
+  gsap.fromTo(blobParams, 
+    { noiseAmount: 0.4 }, 
+    { noiseAmount: 0.04, duration: 1.2, ease: "power2.out" }
+  );
+}
+
+// === 4. Animation Loop ===
+const clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  const dt = clock.getDelta();
+  blobParams.time += dt * 0.5;
+
+  if (morphPoints) {
+    // 마우스가 없을 경우 정확하게 '정면(0)'을 응시하도록 타겟 각도 연산
+    // (계속 굴러가지 않고 지정된 자리에서만 부드럽게 기울어짐)
+    const targetRotX = (mouseY * Math.PI * 0.15);
+    const targetRotY = (mouseX * Math.PI * 0.25);
+    
+    // 부드러운 회전 보간(lerp) 적용
+    morphPoints.rotation.x += (targetRotX - morphPoints.rotation.x) * 0.05;
+    morphPoints.rotation.y += (targetRotY - morphPoints.rotation.y) * 0.05;
+  }
+
+  // 카메라 패럴랙스 (Slight parallax)
+  camera.position.x += (mouseX * 0.3 - camera.position.x) * 0.05;
+  camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.05;
+  camera.lookAt(scene.position);
+
+  renderer.render(scene, camera);
+}
+
+let mouseX = 0, mouseY = 0;
+document.addEventListener("mousemove", (e) => {
+  mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+  mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+});
+
+// === 5. App Initialization ===
+initThree();
+animate();
+
+function updateThreeColors() {
+  const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  if (pointsMaterial) {
+    if (isLight) {
+      pointsMaterial.color.setHex(0x0d8b5a);
+      pointsMaterial.blending = THREE.NormalBlending;
+    } else {
+      pointsMaterial.color.setHex(0x54ffb4);
+      pointsMaterial.blending = THREE.AdditiveBlending;
+    }
+  }
+  if (starsMat) {
+    if (isLight) {
+      starsMat.color.setHex(0x0a6a43);
+    } else {
+      starsMat.color.setHex(0x37ffae);
+    }
+  }
+}
+updateThreeColors();
+const themeBtn = document.getElementById("theme-toggle");
+if(themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    setTimeout(updateThreeColors, 10);
+  });
+}
+
+// 스타일 액센트 스위칭 함수 복구
+function setTheme(section) {
+  const accentRgb = section.dataset.accentRgb ?? "231 124 71";
+  const accentAltRgb = section.dataset.accentAltRgb ?? "103 201 255";
+  document.documentElement.style.setProperty("--accent-rgb", accentRgb);
+  document.documentElement.style.setProperty("--accent-alt-rgb", accentAltRgb);
+}
+
+function activateSection(sectionIndex) {
+  if (!sections.length || sectionIndex < 0 || sectionIndex >= sections.length) return;
+  if (sectionIndex === currentSectionIndex) return;
+
+  currentSectionIndex = sectionIndex;
+
+  if (sectionActivateFrame !== null) {
+    cancelAnimationFrame(sectionActivateFrame);
+    sectionActivateFrame = null;
+  }
+
+  sections.forEach((node, idx) => {
+    // 텍스트를 보이게 하는 핵심 CSS 클래스 복구!
+    node.classList.remove("is-visible");
+    const btn = rail?.children[idx];
+    if(btn) btn.classList.remove("is-active");
+  });
+  
+  const section = sections[sectionIndex];
+  if(currentSectionLabel) currentSectionLabel.textContent = section.dataset.label || "Intro";
+  if(visualStageTitle) visualStageTitle.textContent = section.dataset.visualTitle || section.dataset.label || "Visual";
+
+  setTheme(section);
+
+  // 인트로 및 텍스트 중심 화면(Notes 등)에서는 3D 분자 모델만 페이드아웃하여 글자 가독성을 높입니다. (별빛 배경은 유지)
+  const hiddenSections = ["hero", "notes", "tooling", "contact"];
+  const visualShell = document.getElementById("visual-stage-shell");
+  if(visualShell) {
+    visualShell.style.opacity = "1"; // Canvas 컨테이너 자체는 항상 보이게 유지
+    
+    if (hiddenSections.includes(section.id)) {
+      visualShell.style.pointerEvents = "none";
+      if (morphPoints) gsap.to(morphPoints.material, { opacity: 0, duration: 0.5 });
+    } else {
+      visualShell.style.pointerEvents = "auto";
+      if (morphPoints) gsap.to(morphPoints.material, { opacity: 0.85, duration: 0.5 });
+    }
+  }
+
+  if (section.dataset.visualKey && !hiddenSections.includes(section.id)) {
+    triggerMorph(section.dataset.visualKey);
+  }
+
+  sectionActivateFrame = requestAnimationFrame(() => {
+    sectionActivateFrame = null;
+    section.classList.add("is-visible");
+    const activeBtn = rail?.children[sectionIndex];
+    if (activeBtn) activeBtn.classList.add("is-active");
+  });
+}
+
+function getClosestSectionIndex() {
+  const anchor = Math.max(96, Math.min(window.innerHeight * 0.24, 220));
+  let closestIndex = 0;
+  let closestDistance = Number.POSITIVE_INFINITY;
+
+  for (let index = 0; index < sections.length; index += 1) {
+    const rect = sections[index].getBoundingClientRect();
+
+    if (rect.top <= anchor && rect.bottom > anchor) {
+      return index;
+    }
+
+    const distance = Math.abs(rect.top - anchor);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestIndex = index;
+    }
+  }
+
+  return closestIndex;
+}
+
+function syncActiveSectionToViewport() {
+  if (!sections.length) return;
+  pendingSectionIndex = getClosestSectionIndex();
+  activateSection(pendingSectionIndex);
+}
+
+function requestActiveSectionSync(options = {}) {
+  const { immediate = false } = options;
+
+  if (sectionSyncFrame !== null) {
+    cancelAnimationFrame(sectionSyncFrame);
+  }
+
+  sectionSyncFrame = requestAnimationFrame(() => {
+    sectionSyncFrame = null;
+    pendingSectionIndex = getClosestSectionIndex();
+
+    if (sectionSyncTimer !== null) {
+      clearTimeout(sectionSyncTimer);
+      sectionSyncTimer = null;
+    }
+
+    if (immediate) {
+      activateSection(pendingSectionIndex);
+      return;
+    }
+
+    sectionSyncTimer = setTimeout(() => {
+      sectionSyncTimer = null;
+      activateSection(pendingSectionIndex);
+    }, 120);
+  });
+}
+
+function scheduleViewportSync() {
+  if (resizeSyncFrame !== null) {
+    cancelAnimationFrame(resizeSyncFrame);
+  }
+
+  resizeSyncFrame = requestAnimationFrame(() => {
+    resizeSyncFrame = null;
+    ScrollTrigger.refresh();
+    syncActiveSectionToViewport();
+  });
+}
+
+// Section Rail and Scroll Handling
+sections.forEach((section, index) => {
+  const btn = document.createElement("button");
+  btn.className = "rail-dot";
+  btn.dataset.label = section.dataset.label ?? section.id;
+  btn.addEventListener("click", () => section.scrollIntoView({ behavior: "smooth", block: "start" }));
+  if(rail) rail.appendChild(btn);
+
+  // Set up ScrollTrigger object
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top center",
+    end: "bottom center",
+    onEnter: requestActiveSectionSync,
+    onEnterBack: requestActiveSectionSync
+  });
+});
+
+// 첫 번째 섹션 텍스트 바로 표시 및 모핑 트리거 실행
+if(sections.length > 0) {
+  syncActiveSectionToViewport();
+  scheduleViewportSync();
+}
+
+window.addEventListener("resize", scheduleViewportSync);
+window.addEventListener("orientationchange", scheduleViewportSync);
+window.addEventListener("load", scheduleViewportSync);
+window.addEventListener("scroll", requestActiveSectionSync, { passive: true });
+window.addEventListener("wheel", requestActiveSectionSync, { passive: true });
+window.addEventListener("scrollend", () => requestActiveSectionSync({ immediate: true }));
+ScrollTrigger.addEventListener("refresh", syncActiveSectionToViewport);
+
+const yearNode = document.getElementById("year");
+if (yearNode) yearNode.textContent = new Date().getFullYear();
+
+// --- Intro Sequence ---
+function playIntroSequence() {
+  document.body.style.overflow = 'hidden';
+  const introScreen = document.getElementById('intro-screen');
+  const progressBar = document.getElementById('intro-progress-bar');
+  const percentText = document.getElementById('intro-percent');
+  const typingText = document.getElementById('intro-typing-text');
+  
+  if (!introScreen) return;
+  
+  const tl = gsap.timeline({
+    onComplete: () => {
+      document.body.style.overflow = '';
+      introScreen.remove();
+    }
+  });
+
+  tl.to(progressBar, {
+    width: "100%",
+    duration: 1.5,
+    ease: "power2.inOut",
+    onUpdate: function() {
+      if(percentText) percentText.textContent = Math.round(this.progress() * 100) + "%";
+    }
+  })
+  .to([progressBar.parentElement, percentText], {
+    opacity: 0,
+    duration: 0.3,
+    ease: "power1.inOut"
+  })
+  .call(() => {
+    const textTarget = "Hello, world!";
+    let idx = 0;
+    const interval = setInterval(() => {
+      if(typingText) typingText.textContent = textTarget.substring(0, idx + 1);
+      idx++;
+      if (idx >= textTarget.length) clearInterval(interval);
+    }, 60);
+  })
+  .to({}, { duration: 1.4 })
+  .to(introScreen, {
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.inOut"
+  });
+}
+
+window.addEventListener("load", playIntroSequence);
+    </script>
+  </body>
+</html>

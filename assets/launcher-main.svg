@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Central Launcher Preview</title>
+  <desc id="desc">Placeholder image for the central launcher project preview.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10161c"/>
+      <stop offset="100%" stop-color="#202a33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#67c9ff"/>
+      <stop offset="100%" stop-color="#e77c47"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1120" height="640" rx="36" fill="none" stroke="rgba(255,255,255,0.18)"/>
+  <rect x="130" y="140" width="1020" height="120" rx="24" fill="#0d1217" stroke="rgba(255,255,255,0.12)"/>
+  <circle cx="190" cy="200" r="18" fill="#ff6b6b"/>
+  <circle cx="240" cy="200" r="18" fill="#ffd166"/>
+  <circle cx="290" cy="200" r="18" fill="#06d6a0"/>
+  <text x="130" y="360" fill="#f4f4f1" font-family="Arial, sans-serif" font-size="72" font-weight="700">Central Launcher</text>
+  <text x="130" y="430" fill="#9fb0be" font-family="Arial, sans-serif" font-size="32">GitHub Pages placeholder preview</text>
+  <rect x="130" y="500" width="300" height="120" rx="24" fill="url(#accent)" opacity="0.18"/>
+  <rect x="470" y="500" width="300" height="120" rx="24" fill="url(#accent)" opacity="0.12"/>
+  <rect x="810" y="500" width="340" height="120" rx="24" fill="url(#accent)" opacity="0.08"/>
+</svg>
