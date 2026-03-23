@@ -1191,6 +1191,30 @@ img {
   line-height: 1.45;
 }
 
+.related-project-card {
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.related-project-card .section-kicker {
+  margin-bottom: 10px;
+}
+
+.related-project-card .summary-card strong {
+  margin-top: 0;
+}
+
+.related-project-card .detail-list {
+  margin-top: 16px;
+}
+
+.related-project-card .tag-row {
+  margin-top: 18px;
+}
+
 .hero-console-head {
   display: flex;
   justify-content: space-between;
@@ -1360,6 +1384,10 @@ img {
   margin-top: 16px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#integrated-tracker {
+  display: none;
 }
 
 .abstract-frame {

@@ -491,6 +491,23 @@
               <span class="tag">Logging</span>
               <span class="tag">Dry Run</span>
             </div>
+            <div class="related-project-card">
+              <p class="section-kicker">Connected Tracking Tool</p>
+              <div class="summary-card">
+                <strong>통합 카페/블로그 네이버 키워드 노출 확인</strong>
+                <small>카페와 블로그 노출을 한 흐름 안에서 추적하고 기록하는 통합 추적 도구</small>
+              </div>
+              <ul class="detail-list">
+                <li>Playwright 기반으로 동적 검색 결과와 블록 노출을 추적</li>
+                <li>Google Sheets와 Apps Script를 활용해 운영 데이터 저장과 후속 처리 연동</li>
+                <li>추적, 분류, 기록을 한 번에 이어지는 자동화 흐름으로 설계</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag">Playwright</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Apps Script</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -665,7 +682,7 @@ import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const sections = [...document.querySelectorAll(".snap-section")];
+const sections = [...document.querySelectorAll(".snap-section")].filter(section => section.id !== "integrated-tracker");
 const rail = document.getElementById("section-rail");
 const currentSectionLabel = document.getElementById("current-section-label");
 const visualStageTitle = document.getElementById("visual-stage-title");
